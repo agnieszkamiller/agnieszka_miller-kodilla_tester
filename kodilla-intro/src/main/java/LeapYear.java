@@ -7,16 +7,24 @@ public class LeapYear {
 
         System.out.println(year);
         System.out.println(question);
-
-        if (year % 4 > 0){
-            System.out.println(answerNP);
-        } else if (year % 4 == 0 && year%100 > 0) {
+        boolean leap = isLeapYear(year);
+        if (leap){
             System.out.println(answerP);
-        } else if (year % 4 == 0 && year%100 == 0 && year%400 == 0){
-                System.out.println(answerP);
-        }  else {
+        }
+        else {
             System.out.println(answerNP);
         }
 
+    }
+    public static boolean isLeapYear(int year){
+        if (year % 4 > 0){
+            return false;
+        } else if (year % 4 == 0 && year%100 > 0) {
+            return true;
+        } else if (year % 4 == 0 && year%100 == 0 && year%400 == 0){
+            return true;
+        }  else {
+            return false;
+        }
     }
 }
