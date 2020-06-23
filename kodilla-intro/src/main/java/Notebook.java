@@ -37,4 +37,13 @@ public class Notebook {
             System.out.println("This notebook is new.");
         }
     }
+    public void checkYearPrice(){
+        if (this.year < 2005 && this.price < 300 && this.weight > 2500){
+            System.out.println("This notebook is cheap, but also very old and heavy.");
+        } else if (this.year >=2019 & this.price < 1500){
+            System.out.println("This notebook is a good offer. Buy  it now!");
+        } else {
+            System.out.println("Find online the best notebook for you!");
+        }
+    }
 }
