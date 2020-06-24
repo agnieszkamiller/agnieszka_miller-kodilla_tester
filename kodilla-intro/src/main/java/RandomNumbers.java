@@ -70,6 +70,7 @@ public class RandomNumbers {
     }
 
 
+//    wstepny pomysł:
 //    public int getRandomNumber(int max) {
 //        RandomNumbers random = new RandomNumbers();
 //        int result = 0;
