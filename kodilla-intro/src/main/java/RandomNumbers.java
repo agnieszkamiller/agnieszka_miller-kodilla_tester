@@ -10,6 +10,7 @@ public class RandomNumbers {
         RandomNumbers randomNumbers = new RandomNumbers();
         List<Integer> integerList = randomNumbers.drawingNumbers();
         System.out.println(randomNumbers.maxElement(integerList));
+        System.out.println(randomNumbers.minElement(integerList));
 
     }
 
@@ -39,6 +40,16 @@ public class RandomNumbers {
             }
         }
         return max;
+    }
+    public int minElement(List<Integer> integerList) {
+        int min = integerList.get(0);
+
+        for (int i = 0; i < integerList.size(); i++) {
+            if (integerList.get(i) < min) {
+                min = integerList.get(i);
+            }
+        }
+        return min;
     }
 
 

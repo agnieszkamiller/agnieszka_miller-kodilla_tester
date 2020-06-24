@@ -3,7 +3,7 @@ public class Calculator {
     static int  counter = 0;
 
     public Calculator() {
-        counter++;
+        counter++; // konstruktor zwiększający wartośc pola
     }
 
     public double add(double a, double b) {
@@ -11,6 +11,7 @@ public class Calculator {
     }
 
     public double sub(double a, double b) {
+
         return a - b;
     }
 
