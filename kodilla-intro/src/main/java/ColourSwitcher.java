@@ -1,51 +1,49 @@
 import java.util.Scanner;
 
-public class ColourSwitcher {
-//    private static final String CZARNY = "C";
-//    private static final String POMARANCZOWY = "P";
-//    private static final String BIALY= "B";
-//    private static final String ZIELONY = "Z";
-
-
+public class ColourSwitcher<firstLetter> {
+    private static final String CZARNY = "C";
+    private static final String POMARANCZOWY = "P";
+    private static final String BIALY = "B";
+    private static final String ZIELONY = "Z";
+    private static final String NIEBIESKI = "N";
+    private static final String FIOLETOWY = "F";
+    private static final String ROZOWY = "R";
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wprowadź pierwszą listerę oczekiwanego koloru.");
-        String chosenColour = scanner.nextLine();
-        System.out.println(ColourSwitcher.giveChosenColour(Colours.CZARNY));
+        System.out.println(getFirstLetter());
     }
 
-    public static String giveChosenColour(Colours chosenColour) {
-
-        String colour;
-//
-//        if(Colours.ZIELONY.ordinal()[firstColourLetter] ==)
-
-        switch (chosenColour) {
-            case CZARNY:
-                colour = "czarny";
+    public static String getFirstLetter() {
+        String firstLetter = null;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Wprowadź pierwszą literę oczekiwanego koloru. Do wyboru masz: C, P, B, Z, N, F, R.");
+            firstLetter = scanner.nextLine().trim().toUpperCase();
+            if (firstLetter.length() == 1) {
+                System.out.println(firstLetter);
                 break;
-            case POMARANCZOWY:
-                colour = "pomarańczowy";
-                break;
-            case BIALY:
-                colour = "biały";
-                break;
-            case ZIELONY:
-                colour = "zielony";
-                break;
-//            case "N":
-//                colour = "niebieski";
-//                break;
-//            case "F":
-//                colour = "fioletowy";
-//                break;
-//            case "R":
-//                colour = "rozowy";
-//                break;
-            default:
-                colour = "Nie ma takiego koloru";
+            }
+            System.out.println("Nieprawidlowy wybor. Sprobuj jeszcze raz.");
         }
-        return colour;
+
+        switch (firstLetter) {
+            case "C":
+                return "czarny";
+            case "P":
+                return "pomarańczowy";
+            case "B":
+                return "biały";
+            case "Z":
+                return "zielony";
+            case "N":
+                return "niebieski";
+            case "F":
+                return "fioletowy";
+            case "R":
+                return "rozowy";
+            default:
+                System.out.println("Nie ma takiego koloru");
+                return "Nie ma takiego koloru.";
+        }
     }
 }

@@ -15,16 +15,25 @@ public class Grades {
         this.size++;
     }
 
-    public int lastValue(int value) {
-        return (this.grades[this.size]);
-        }
+    public int lastValue() {
+        return (this.grades[this.size-1]);
+    }
 
     public double averageValue() {
         double result = 0;
-        for (int i =0; i < grades.length; i++) {
+        for (int i = 0; i < this.size; i++) {
             result = result + grades[i];
         }
         return result / this.size;
     }
 
+    public static void main(String[] args) {
+        Grades grades = new Grades();
+        grades.add(1);
+        grades.add(5);
+        grades.add(4);
+
+        System.out.println(grades.lastValue());
+        System.out.println(grades.averageValue());
+    }
 }

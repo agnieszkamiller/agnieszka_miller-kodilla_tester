@@ -70,18 +70,5 @@ public class RandomNumbers {
     }
 
 
-//    wstepny pomysł:
-//    public int getRandomNumber(int max) {
-//        RandomNumbers random = new RandomNumbers();
-//        int result = 0;
-//        int sum = 0;
-//        int max = 5000;
-//
-//        while (sum <= max) {
-////            int temp = random.nextInt(31);
-//            sum = sum + temp;
-//            result++;
-//        }
-//        return result;
-//    }
+
 }

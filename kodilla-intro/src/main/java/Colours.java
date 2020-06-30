@@ -3,6 +3,9 @@ public enum Colours {
     POMARANCZOWY("P"),
     BIALY("B"),
     ZIELONY("Z");
+//    NIEBIESKI("N");
+//    FIOLETOWY("F");
+//    ROZOWY("R");
 
     String colourName;
 
