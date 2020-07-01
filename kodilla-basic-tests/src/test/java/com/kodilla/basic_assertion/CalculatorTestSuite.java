@@ -16,8 +16,7 @@ public class CalculatorTestSuite {
 
 //        when
         int sumResult = calculator.sum(a, b);
-// ctrl + Q - wyświetlenie opisu z biblioteki  okienku
-// ctrl + B - przeniesienie do danej klasy, metody lub dokumentacji
+
 //        then
         assertEquals(0, sumResult);
     }
