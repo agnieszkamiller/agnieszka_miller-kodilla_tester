@@ -27,4 +27,10 @@ public abstract class Job {
     public String getPosition() {
         return position;
     }
+
+    public void showResp(int respNumb1, int respNumb2) {
+        System.out.println(respList[respNumb1 - 1]);
+        System.out.println(respList[respNumb2 - 1]);
+    }
+
 }
