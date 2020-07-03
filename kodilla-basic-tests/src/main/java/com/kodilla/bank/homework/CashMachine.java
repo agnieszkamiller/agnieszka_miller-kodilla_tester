@@ -5,8 +5,8 @@ public class CashMachine {
     private int size;
 
     public CashMachine() {
-        this.size = 0;
         this.transactions = new int[0];
+        this.size = 0;
     }
 
     public void addTransaction(int transaction) {
@@ -22,7 +22,6 @@ public class CashMachine {
 //        for (int i = 0; i < transactions.length; i++) {
 //            saldoTrans = saldoTrans + transactions[i];
 //        }
-
         // int - określenie typu zbioru, po jaki iterujemy| transaction - wskazanie jednego elementu
         // | transactions - nazwa tablicy po jakiej iterujemy
 
@@ -36,10 +35,9 @@ public class CashMachine {
     public int countingNumberOfTrans() {
         int transNumb = transactions.length;
         return transNumb;
-
     }
 
-    public int withdrawalCounting() {
+    public int withdrawalCounting() { //liczba wypłat
         int counter = 0;
         for (int i = 0; i < transactions.length; i++) {
             if (transactions[i] < 0) {
@@ -48,10 +46,9 @@ public class CashMachine {
         }
         return counter;
     }
-
-    public int depositCounting() {
+    public int depositCounting() { //liczba wypłat
         int counter = 0;
-        for (int i = 1; i < transactions.length; i++) {
+        for (int i = 0; i < transactions.length; i++) {
             if (transactions[i] > 0) {
                 counter++;
             }
@@ -59,18 +56,28 @@ public class CashMachine {
         return counter;
     }
 
-    public int sumWithdrawalAmount(){
+    public int sumWithdrawalAmount() { //suma wypłat
         int sum = 0;
         for (int i = 0; i < transactions.length; i++) {
             if (transactions[i] < 0) {
-                sum+= transactions[i];
+                sum += transactions[i];
             }
         }
         return sum;
     }
 
+    public int sumDepositAmount() { //suma wpłat
+        int sumD = 0;
+        for (int i = 0; i < transactions.length; i++) {
+            if (transactions[i] > 0) {
+                sumD += transactions[i];
+            }
+         }
+        return sumD;
+    }
 
     public int[] getTransactions() {
         return transactions;
     }
+
 }

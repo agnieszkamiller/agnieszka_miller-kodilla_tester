@@ -55,6 +55,42 @@ public class CashMachineTestSuite {
         //then
         assertEquals(1, cashMachine.getTransactions().length);
     }
+    @Test
+    public void ifWithdrawalCountingIsCorrect(){
+        //given
+        //when
+        cashMachine.addTransaction(-250);
+        cashMachine.addTransaction(-100);
+        cashMachine.addTransaction(-50);
+        //then
+        assertEquals(3, cashMachine.withdrawalCounting());
+    }
+    @Test
+    public void ifDepositCountingIsCorrect(){
+        //given
+        //when
+        cashMachine.addTransaction(50);
+        cashMachine.addTransaction(100);
+        //then
+        assertEquals(2, cashMachine.depositCounting());
+    }
+    @Test
+    public void ifSumWithdrawalamountIsCorrect(){
+        //given
+        //when
+        cashMachine.addTransaction(-50);
+        cashMachine.addTransaction(-100);
+        //then
+        assertEquals(-150, cashMachine.sumWithdrawalAmount());
 
-
+    }
+    @Test
+    public void ifSumDepositAmountIsCorrect(){
+        //given
+        //when
+        cashMachine.addTransaction(50);
+        cashMachine.addTransaction(100);
+        //then
+        assertEquals(150, cashMachine.sumDepositAmount());
+    }
 }

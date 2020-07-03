@@ -37,5 +37,48 @@ private Bank bank = new Bank();
 
     }
 
+    @Test
+    public void ifSumWithdawalNumberIsCorrect(){
+        cashMachine1.addTransaction(-1);
+        cashMachine1.addTransaction(-1);
+        cashMachine2.addTransaction(-1);
+        //when
+        bank.getCashMachines()[0] = cashMachine1;
+        bank.getCashMachines()[1] = cashMachine2;
+        //than
+        assertEquals(3,bank.sumWithdrawalNumber());
+    }
 
+    @Test
+    public void ifSumDepositNumberIsCorrect(){
+        cashMachine1.addTransaction(1);
+        cashMachine2.addTransaction(1);
+        //when
+        bank.getCashMachines()[0] = cashMachine1;
+        bank.getCashMachines()[1] = cashMachine2;
+        //than
+        assertEquals(2,bank.sumDepositNumber());
+    }
+    @Test
+    public void ifAverageWithdrawalAmountIsCorrect(){
+        cashMachine1.addTransaction(-1);
+        cashMachine1.addTransaction(-1);
+        cashMachine2.addTransaction(-1);
+        //when
+        bank.getCashMachines()[0] = cashMachine1;
+        bank.getCashMachines()[1] = cashMachine2;
+        //than
+        assertEquals(-1, bank.averageWithdrawalAmount());
+    }
+    @Test
+    public void ifAverageDepositAmountIsCorrect(){
+        cashMachine1.addTransaction(1);
+        cashMachine1.addTransaction(1);
+        cashMachine2.addTransaction(1);
+        //when
+        bank.getCashMachines()[0] = cashMachine1;
+        bank.getCashMachines()[1] = cashMachine2;
+        //than
+        assertEquals(1, bank.averageDepositAmount());
+    }
 }
