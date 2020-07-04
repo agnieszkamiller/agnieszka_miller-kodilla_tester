@@ -4,27 +4,28 @@ import java.util.Arrays;
 
 public class Bank {
 
-    private CashMachine[] cashMachines = new CashMachine[2];
+    private CashMachine[] cashMachines;
 
-    void provideTransactionInSeveralCashMachines() {
-        CashMachine cashMachine1 = new CashMachine();
-        cashMachine1.addTransaction(10);
-        cashMachine1.addTransaction(-5);
-        System.out.println(cashMachine1.calculatingSaldo());
+    private int size;
 
-        CashMachine cashMachine2 = new CashMachine();
-        cashMachine2.addTransaction(100);
-        cashMachine2.addTransaction(-50);
-        cashMachine2.addTransaction(-10);
-        System.out.println(cashMachine2.calculatingSaldo());
+    public Bank() {
+        this.cashMachines = new CashMachine[0];
+        this.size = 0;
+    }
 
-        cashMachines[0] = cashMachine1;
-        cashMachines[1] = cashMachine2;
+
+    public void add(CashMachine cashMachine) {
+        this.size++;
+        CashMachine tempCash[] = new CashMachine[this.size];
+        System.arraycopy(cashMachines, 0, tempCash, 0, cashMachines.length);
+        tempCash[this.size - 1] = cashMachine;
+        this.cashMachines = tempCash;
     }
 
     public int sumSaldoFromAllCashMachines() {  // metoda zawierająca całkowity bilans ze wszystkich bankomatów,
         int totalSaldo = 0;
         for (int i = 0; i < cashMachines.length; i++) {
+
             totalSaldo += cashMachines[i].calculatingSaldo();
         }
         return totalSaldo;
@@ -55,14 +56,14 @@ public class Bank {
         for (int i = 0; i < cashMachines.length; i++) {
             totalWithdrawal += cashMachines[i].sumWithdrawalAmount();
         }
-        return totalWithdrawal/sumWithdrawalNumber();
+        return totalWithdrawal / sumWithdrawalNumber();
     }
 
     public int averageDepositAmount() {// metoda zawierająca średnią wartość wpłaty.
         int totalDeposit = 0;
         for (int i = 0; i < cashMachines.length; i++) {
             totalDeposit += cashMachines[i].sumDepositAmount();
-            }
-        return totalDeposit/sumDepositNumber();
+        }
+        return totalDeposit / sumDepositNumber();
     }
 }

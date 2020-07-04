@@ -6,7 +6,6 @@ public class Main {
 
         Bank bank = new Bank();
         System.out.println("Salda dla poszczególnych bankomatów:");
-        bank.provideTransactionInSeveralCashMachines();
         System.out.println("Saldo dla wszystkich bankomatów:");
         System.out.println(bank.sumSaldoFromAllCashMachines());
         System.out.println("Liczba wypłat z bankomatów:");
