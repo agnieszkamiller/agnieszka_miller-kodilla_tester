@@ -25,4 +25,5 @@ public class School {
     public int giveSize() {
         return students.size();
     }
+
 }

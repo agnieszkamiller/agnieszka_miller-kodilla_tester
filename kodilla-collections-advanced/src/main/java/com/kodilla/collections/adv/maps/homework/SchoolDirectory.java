@@ -41,5 +41,7 @@ public class SchoolDirectory {
         totalStudentsNumber += principalSchoolEntry.getValue().giveSize();
         }
         System.out.println("Całkowita liczba studentów: "+ totalStudentsNumber);
+
     }
+
 }
