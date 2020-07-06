@@ -11,7 +11,6 @@ public final class Task {
         this.dateOfStart = dateOfStart;
     }
 
-
     public final String getTitle() {
         return title;
     }
@@ -23,4 +22,5 @@ public final class Task {
     public final int getDateOfStart() {
         return dateOfStart;
     }
+
 }
