@@ -2,7 +2,7 @@ package com.kodilla.collections.adv.exercises.dictionary;
 
 import java.util.*;
 
-public class Dictionary { ///klasa przechowuje wpisy do słownika w mapie
+public class Dictionary { //klasa przechowuje wpisy do słownika w mapie
     Map<String, List<EnglishWord>> dictionary = new HashMap<>(); //klucze=polskie słowa, warości = listy słów angielskich
 
     public void addWord(String polishWord, EnglishWord englishWord) {
