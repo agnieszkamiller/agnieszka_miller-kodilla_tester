@@ -6,20 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class FlightRepository {
-//    Map<String, String> flights = new HashMap<>(); //klucze - odloty, wartości - przyloty
 
-//    public static List<FlightsTable> getFlightsTable(String departure, String arrival){ //metoda statyczna
-//        // getFlightsTable(), która zwraca listę lotów obsługiwanych przez dane lotnisko
-//        // (wypełnij tę listę przykładowymi lotami)
-//        List<FlightTable> flightTableList = flights.getOrDefault(departure, new ArrayList<>();
-//        departure.add(departure);
-//        arrival.add(arrival);
-//        flights.put(departure, arrival);
-//
-//    }
-
-
-
+            //metoda statyczna getFlightsTable(), która zwraca listę lotów obsługiwanych przez dane lotnisko
+            //(wypełnij tę listę przykładowymi lotami)
     public static List<Flight> getFlightsTable(){
         List<Flight> flightsTable = new ArrayList<>();
         flightsTable.add(new Flight("Amsterdam", "Paryż"));
@@ -27,6 +16,5 @@ public class FlightRepository {
         flightsTable.add(new Flight("Amsterdam", "Praga"));
         flightsTable.add(new Flight("Amsterdam", "Lizbona"));
         return flightsTable;
-
     }
 }

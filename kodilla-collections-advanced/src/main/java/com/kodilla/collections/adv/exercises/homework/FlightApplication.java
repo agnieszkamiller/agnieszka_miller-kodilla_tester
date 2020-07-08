@@ -7,10 +7,12 @@ public class FlightApplication {
         FlightFinder flightFinder = new FlightFinder();
         for (Flight flight : flightFinder.findFlightsFrom("Wiedeń")) {
             System.out.println(flight);
-        }
+            }
+        System.out.println("************");
         for (Flight flight : flightFinder.findFlightsFrom("Amsterdam")) {
             System.out.println(flight);
         }
+        System.out.println("************");
         for (Flight flight : flightFinder.findFlightsTo("Paryż")) {
             System.out.println(flight);
         }

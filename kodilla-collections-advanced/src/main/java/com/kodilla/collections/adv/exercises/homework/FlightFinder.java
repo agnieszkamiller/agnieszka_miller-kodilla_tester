@@ -7,7 +7,7 @@ import java.util.List;
 public class FlightFinder {
     private List<Flight> flights = FlightRepository.getFlightsTable();
 
-    public List<Flight> findFlightsFrom(String departure) { // metoda wyszukująca loty do
+    public List<Flight> findFlightsFrom(String departure) { // metoda wyszukująca loty z
         List<Flight> resultFlights = new ArrayList<>();
         for (Flight flight : flights) {
             if (flight.getDeparture().equalsIgnoreCase(departure)) {
@@ -17,7 +17,7 @@ public class FlightFinder {
         return resultFlights;
     }
 
-    public List<Flight> findFlightsTo(String arrival) { // metoda wyszukująca loty z
+    public List<Flight> findFlightsTo(String arrival) { // metoda wyszukująca loty do
         List<Flight> resultFlights = new ArrayList<>();
         for (Flight flight : flights) {
             if (flight.getArrival().equalsIgnoreCase(arrival)) {
