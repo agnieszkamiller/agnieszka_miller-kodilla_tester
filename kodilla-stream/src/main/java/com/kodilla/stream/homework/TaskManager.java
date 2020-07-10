@@ -15,14 +15,26 @@ public class TaskManager {
         List<LocalDate> results = taskManager.getDeadlinesOfIncompleteTasks(TaskRepository.getTasks());
         System.out.println(results);
     }
-    public List<LocalDate> getDeadlinesOfIncompleteTasks(List<Task> tasks){
+
+    public List<LocalDate> getDeadlinesOfIncompleteTasks(List<Task> tasks) {
         LocalDate currentDate = LocalDate.now();
         List<LocalDate> dates = tasks
-                .stream()
-                .filter(task -> task.getDeadline().isAfter(currentDate))
-                .map(task -> task.getDeadline())
-                .collect(Collectors.toList());
-        return dates;
+                .stream()//otwarcie strumienia
+                .filter(task -> task.getDeadline().isAfter(currentDate))//filtrowanie wszystkiego co zawiera obiekt Task
+                .map(Task::getDeadline)//mapowanie na datę
+                .collect(Collectors.toList());//transpormacja
+        for (LocalDate date : dates) {
+            System.out.println(date);
+        }
+        System.out.println("**********************************************");
+
+
+        List<LocalDate> dates1 = tasks //mapowanie, potem filtracja
+                .stream()//otwarcie strumienia
+                .map(Task::getDeadline)//mapowanie, czyli zebranie strumienia danych potrzebnych z wszystich danych
+                .filter(localDate -> localDate.isAfter(currentDate))//filtrowanie
+                .collect(Collectors.toList());//transformacja
+        return dates1;
     }
 
 }
@@ -30,11 +42,6 @@ public class TaskManager {
 //        tasks
 //                .stream()
 //                .filter(date -> date.deadline.LocalDate.of(2020,6,13))
-
-
-
-
-
 
 
 //        List<Integer> liczby = List.of(1, 15, 114, 21, 500, 4);
