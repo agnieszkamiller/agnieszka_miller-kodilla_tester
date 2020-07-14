@@ -11,7 +11,7 @@ public class Warehouse {
         orderList.add(order);
     }
 
-    public Order getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder(String number){
         Order order = orderList
                 .stream()
                 .filter(order1 -> order1.getNumber().equals(number))

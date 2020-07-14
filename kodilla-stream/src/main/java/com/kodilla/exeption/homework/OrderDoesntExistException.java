@@ -1,8 +1,9 @@
 package com.kodilla.exeption.homework;
 
-public class OrderDoesntExistException extends Exception {
+public class OrderDoesntExistException extends NullPointerException
+{
 
-    public OrderDoesntExistException() {
-        super("To zamówienie nie istnieje!");
-    }
+//    public OrderDoesntExistException() {
+//        super("To zamówienie nie istnieje!");
+//    }
 }
