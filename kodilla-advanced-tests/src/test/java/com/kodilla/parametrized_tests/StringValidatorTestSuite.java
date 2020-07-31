@@ -32,7 +32,7 @@ class StringValidatorTestSuite {
         assertTrue(validator.isBlank(null));
     }
 
-    //testy parametryzowane
+    /* testy parametryzowane
     @ParameterizedTest
     @ValueSource(strings = {"", "   "})
     public void shouldReturnTrueIfStringIsEmpty(String text) {
@@ -55,6 +55,8 @@ class StringValidatorTestSuite {
     public void shouldReturnTrueIfStringIsEmpty(String text) {
         assertTrue(validator.isBlank(text));
     }
+
+     */
 //sprawdzenie jakie wartości przekazuje dana adnotacja:
 //w konsoli najpierw zobaczysz |null|, a potem ||
     @ParameterizedTest
