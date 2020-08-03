@@ -17,7 +17,7 @@ class GamblingMachineTestSuite {
     void shouldThrowExceptionWhenNumberIsLowerThanOne2(String input) {
         //given
         System.out.println(input);
-        String[] num = input.split("");
+        String[] num = input.split(",");
         Set<Integer> nowyZestaw = new HashSet<>();
         for (String s : num) {
             nowyZestaw.add(Integer.parseInt(s));

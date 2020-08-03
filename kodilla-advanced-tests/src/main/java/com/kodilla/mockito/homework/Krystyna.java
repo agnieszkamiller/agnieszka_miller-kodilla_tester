@@ -8,13 +8,29 @@ public class Krystyna implements Subscriber{
         return "Krystyna";
     }
 
+
     @Override
     public boolean receiveNotification(Notification notification) {
         return false;
     }
 
     @Override
-    public boolean removeNotification(Notification notification) {
+    public boolean receiveWeatherNotification(WeatherNotification weatherNotification) {
         return false;
+    }
+
+    @Override
+    public void addSubscription(Location location) {
+
+    }
+
+    @Override
+    public void cancelSubscription(Location location) {
+
+    }
+
+    @Override
+    public void cancelAllSubscriptions(Location location) {
+
     }
 }

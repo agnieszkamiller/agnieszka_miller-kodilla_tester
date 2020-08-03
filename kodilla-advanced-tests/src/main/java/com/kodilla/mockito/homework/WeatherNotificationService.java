@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class WeatherNotificationService {
     private Map<Location, List<Subscriber>> locationListMap = new HashMap<>();
+    private Map<Subscriber, List<Location>> subscriberListMap = new HashMap<>();
 
 
     public static void main(String[] args) {
@@ -32,6 +33,10 @@ public class WeatherNotificationService {
         for (Map.Entry<Location, List<Subscriber>> locationListEntry : locationListMap.entrySet()) {
             System.out.println(locationListEntry);
         }
+    }
+
+    void addLocationToSub(Subscriber subscriber, Location location){
+
     }
 
 
@@ -65,18 +70,18 @@ public class WeatherNotificationService {
         }
     }
 
-    public void sendingNotificationAccordingToLocation(Location location, Notification notification){
-        for (Subscriber subscriber : locationListMap.get(location)) {
-            subscriber.receiveNotification(notification);
-        }
-    }
-    public void sendingNotificationToAll(Notification notification){
-        for (Map.Entry<Location, List<Subscriber>> locationListEntry : locationListMap.entrySet()) {
-            for (Subscriber subscriber : locationListEntry.getValue()) {
-                subscriber.receiveNotification(notification);
-            }
-        }
-    }
+//    public void sendingNotificationAccordingToLocation(Location location, WeatherNotification weatherNotification){
+//        for (Subscriber subscriber : locationListMap.get(location)) {
+//            subscriber.receiveNotification(weatherNotification);
+//        }
+//    }
+//    public void sendingNotificationToAll(WeatherNotification weatherNotification){
+//        for (Map.Entry<Location, List<Subscriber>> locationListEntry : locationListMap.entrySet()) {
+//            for (Subscriber subscriber : locationListEntry.getValue()) {
+//                subscriber.receiveNotification(weatherNotification);
+//            }
+//        }
+//    }
 
     public void removeLocation(Location location){
         locationListMap.remove(location);

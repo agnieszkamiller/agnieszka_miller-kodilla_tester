@@ -14,7 +14,22 @@ public class Piotr implements Subscriber{
     }
 
     @Override
-    public boolean removeNotification(Notification notification) {
+    public boolean receiveWeatherNotification(WeatherNotification weatherNotification) {
         return false;
+    }
+
+    @Override
+    public void addSubscription(Location location) {
+
+    }
+
+    @Override
+    public void cancelSubscription(Location location) {
+
+    }
+
+    @Override
+    public void cancelAllSubscriptions(Location location) {
+
     }
 }
