@@ -2,34 +2,26 @@ package com.kodilla.mockito.homework;
 
 import javax.management.Notification;
 
-public class Piotr implements Subscriber{
+public class Piotr implements Subscriber {
+
+//    private String info;
+
+    @Override
+    public boolean receiveNotification(WeatherNotification weatherNotification) {
+        if (weatherNotification == null) {
+            return false;
+        }
+        System.out.println(weatherNotification.info());
+        return true;
+    }
+
+    @Override
+    public boolean removeNotification(WeatherNotification weatherNotification) {
+        return false;
+    }
+
     @Override
     public String toString() {
-        return "Piotr";
-    }
-
-    @Override
-    public boolean receiveNotification(Notification notification) {
-        return false;
-    }
-
-    @Override
-    public boolean receiveWeatherNotification(WeatherNotification weatherNotification) {
-        return false;
-    }
-
-    @Override
-    public void addSubscription(Location location) {
-
-    }
-
-    @Override
-    public void cancelSubscription(Location location) {
-
-    }
-
-    @Override
-    public void cancelAllSubscriptions(Location location) {
-
+        return "Piotr ";
     }
 }
