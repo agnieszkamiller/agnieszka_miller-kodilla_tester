@@ -36,7 +36,7 @@ public class Shop {
 
     }
     public int getOrdersSize(){
-    return orders.size();
+            return orders.size();
     }
 
     public List<Order> getOrdersFromDateRange(LocalDate localDate1, LocalDate localDate2 ){

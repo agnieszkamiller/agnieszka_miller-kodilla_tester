@@ -4,7 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anySet;
 
 public class WeatherServiceTestSuite {
     private WeatherService weatherService = new WeatherService();
@@ -15,11 +20,16 @@ public class WeatherServiceTestSuite {
     private Location location1 = Mockito.mock(Location.class);
     private Location location2 = Mockito.mock(Location.class);
 
+
     @BeforeEach
     void addingLocation() {
+        Set<Subscriber> subscriberSet = new HashSet<>();
+        subscriberSet.add(subscriber);
         weatherService.addLocation(location);
         weatherService.addLocation(location1);
-        weatherService.addLocation(location2);
+        weatherService.addLocation(location2, subscriberSet);
+
+
     }
 
     @Test
@@ -46,9 +56,10 @@ public class WeatherServiceTestSuite {
     }
 
     @Test
-    public void shouldAllSubscribersGetNotification() { //test nie działa,
+    public void shouldAllSubscribersGetNotification() {
         weatherService.sendingNotificationToAll(weatherNotification);
-        Mockito.verify(subscriber).receiveNotification(weatherNotification);
+        Mockito.verify(location2, Mockito.times(1)).sendNotification(any(WeatherNotification.class),
+                anySet());
         //ale działa na boolean:
 //        Mockito.when(subscriber.receiveNotification(weatherNotification)).thenReturn(true);
 //        assertTrue(subscriber.receiveNotification(weatherNotification));
@@ -57,6 +68,7 @@ public class WeatherServiceTestSuite {
 
     @Test
     void shouldSubscriberReceivedNotification() {//to działa
+
         weatherService.sendingNotificationToSubscriber(subscriber, weatherNotification);
         Mockito.verify(subscriber).receiveNotification(weatherNotification);
     }

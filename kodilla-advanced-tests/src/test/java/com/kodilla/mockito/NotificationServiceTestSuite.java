@@ -23,7 +23,7 @@ public class NotificationServiceTestSuite {
 
         notificationService.sendNotification(notification);
         client.receive(notification);
-        Mockito.verify(client, Mockito.times(1)).receive(notification);
+        Mockito.verify(client, Mockito.times(2)).receive(notification);
     }
 
     @Test

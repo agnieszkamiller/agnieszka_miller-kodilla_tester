@@ -38,6 +38,10 @@ public class WeatherService {
         locationListMap.put(location, subscriberList);
     }
 
+    public void addLocation(Location location, Set<Subscriber> subscribers){
+        locationListMap.put(location, subscribers);
+    }
+
     public void addSubscriberToLocation(Location location, Subscriber subscriber) {
 
         for (Map.Entry<Location, Set<Subscriber>> locationListEntry : locationListMap.entrySet()) {
@@ -92,5 +96,9 @@ public class WeatherService {
 
     public Map<Location, Set<Subscriber>> getLocationListMap() {
         return locationListMap;
+    }
+
+    public void setLocationListMap(Map<Location, Set<Subscriber>> locationListMap) {
+        this.locationListMap = locationListMap;
     }
 }
