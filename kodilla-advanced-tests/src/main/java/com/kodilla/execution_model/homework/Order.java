@@ -3,9 +3,9 @@ package com.kodilla.execution_model.homework;
 import java.time.LocalDate;
 
 public class Order {
-    private double orderValue;
-    private LocalDate orderDate;
-    private String login;
+    private final double orderValue;
+    private final LocalDate orderDate;
+    private final String login;
 
     public Order(double orderValue, LocalDate orderDate, String login) {
         this.orderValue = orderValue;

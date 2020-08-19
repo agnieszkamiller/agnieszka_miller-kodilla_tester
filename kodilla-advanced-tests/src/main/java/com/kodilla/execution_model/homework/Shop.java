@@ -43,8 +43,11 @@ public class Shop {
     List<Order> chosenOrders  = new ArrayList<>();
 
         for (Order order : orders) {
-            if (order.getOrderDate().isAfter(localDate1) && order.getOrderDate().isBefore(localDate2)) {
-                chosenOrders.add(order);
+//            if (order.getOrderDate().isAfter(localDate1) && order.getOrderDate().isBefore(localDate2)) {
+            if ((order.getOrderDate().isEqual(localDate1) || order.getOrderDate().isEqual(localDate2)) &&
+                    order.getOrderDate().isAfter(localDate1) && order.getOrderDate().isBefore(localDate2)) {
+
+                    chosenOrders.add(order);
             }
         }
         return chosenOrders;
@@ -53,6 +56,7 @@ public class Shop {
     public List<Order> getOrdersFromValueRange(double orderValue1, double orderValue2){
         List<Order> chosenOrdersByValue  = new ArrayList<>();
         for (Order order : orders) {
+//            if (orderValue1 < order.getOrderValue() && order.getOrderValue() < orderValue2 ){
             if (orderValue1 <= order.getOrderValue() && order.getOrderValue() <= orderValue2 ){
                 chosenOrdersByValue.add(order);
             }
