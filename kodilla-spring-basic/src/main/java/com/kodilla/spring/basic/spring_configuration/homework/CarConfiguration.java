@@ -36,5 +36,4 @@ public class CarConfiguration {
         Car suv = new SUV();
         return suv;
     }
-
 }

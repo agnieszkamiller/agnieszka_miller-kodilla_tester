@@ -8,7 +8,6 @@ public class Cabrio implements Car {
     public boolean hasHeadlightsTurnedOn(LocalTime localTime) {
         if ((localTime.isAfter(LocalTime.of(20, 0)) &&
                 (localTime.isBefore(LocalTime.of(6, 0))))) {
-
             return true;
         }
         return false;

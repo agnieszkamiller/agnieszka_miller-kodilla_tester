@@ -8,7 +8,6 @@ public class Sedan implements Car {
     public boolean hasHeadlightsTurnedOn(LocalTime localTime) {
         if ((localTime.isAfter(LocalTime.of(20, 0)) &&
                 (localTime.isBefore(LocalTime.of(6, 0))))) {
-
             return true;
         }
         return false;
@@ -18,4 +17,5 @@ public class Sedan implements Car {
     public String getCarType() {
         return "Sedan";
     }
+
 }
