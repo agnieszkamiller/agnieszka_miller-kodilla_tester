@@ -43,5 +43,4 @@ class ShopTestSuite {
     assertEquals(85, shop.ordersTotalValue());
     }
 
-
 }

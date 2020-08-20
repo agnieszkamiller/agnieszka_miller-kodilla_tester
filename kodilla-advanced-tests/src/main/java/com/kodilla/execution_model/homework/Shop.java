@@ -69,4 +69,6 @@ public class Shop {
         }
         return totalValue;
     }
+
+
 }
