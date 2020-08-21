@@ -20,4 +20,5 @@ class CarConfigurationTestSuite {
         List<String> carTypes = Arrays.asList("SUV", "Sedan", "Cabrio");
         assertTrue(carTypes.contains(carType));
     }
+
 }
