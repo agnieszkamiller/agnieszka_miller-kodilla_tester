@@ -12,8 +12,6 @@ public class CarConfiguration {
     private final static int SUMMER = 2;
     private final static int AUTUMN = 3;
     private final static int WINTER = 4;
-
-
     private Random random = new Random();
     private boolean lightsOn;
 
@@ -27,7 +25,7 @@ public class CarConfiguration {
 
     private LocalTime giveRandomTime() {
         LocalTime[] localTimes = {LocalTime.of(12, 0), LocalTime.of(0, 0)};
-       LocalTime localTime =  localTimes[random.nextInt(localTimes.length)];
+        LocalTime localTime = localTimes[random.nextInt(localTimes.length)];
         System.out.println(localTime);
         return localTime;
     }
@@ -53,6 +51,7 @@ public class CarConfiguration {
     }
 
     public boolean isLightsOn() {
+
         return lightsOn;
     }
 }
