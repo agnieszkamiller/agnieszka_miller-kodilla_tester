@@ -3,14 +3,13 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import java.time.LocalTime;
 
 public class Sedan implements Car {
-
     @Override
     public boolean hasHeadlightsTurnedOn(LocalTime localTime) {
-        if ((localTime.isAfter(LocalTime.of(20, 0)) &&
-                (localTime.isBefore(LocalTime.of(6, 0))))) {
-            return true;
+        if ((localTime.isAfter(LocalTime.of(6, 0)) &&
+                (localTime.isBefore(LocalTime.of(20, 0))))) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override

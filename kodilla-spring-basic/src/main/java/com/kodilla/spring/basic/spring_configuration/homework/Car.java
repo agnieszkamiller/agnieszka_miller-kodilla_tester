@@ -6,6 +6,6 @@ public interface Car {
 
     boolean hasHeadlightsTurnedOn(LocalTime localTime);
 
-
     String getCarType();
+
 }

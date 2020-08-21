@@ -8,32 +8,51 @@ import java.util.Random;
 
 @Configuration
 public class CarConfiguration {
+    private final static int SPRING = 1;
+    private final static int SUMMER = 2;
+    private final static int AUTUMN = 3;
+    private final static int WINTER = 4;
+
+
     private Random random = new Random();
+    private boolean lightsOn;
 
     @Bean
     public Car choseCar() {
-        LocalTime localTime = giveRandomTime();
         Car chosenCar = suiteCarToSeason();
-        chosenCar.hasHeadlightsTurnedOn(localTime);
+        LocalTime localTime = giveRandomTime();
+        lightsOn = chosenCar.hasHeadlightsTurnedOn(localTime);
         return chosenCar;
     }
 
     private LocalTime giveRandomTime() {
-        LocalTime[] localTimes = {LocalTime.of(12,0),LocalTime.of(0,0)};
-        return localTimes[random.nextInt(localTimes.length)];
+        LocalTime[] localTimes = {LocalTime.of(12, 0), LocalTime.of(0, 0)};
+       LocalTime localTime =  localTimes[random.nextInt(localTimes.length)];
+        System.out.println(localTime);
+        return localTime;
     }
 
     private Car suiteCarToSeason() {
+        Car car = null;
         switch (random.nextInt(4) + 1) {
-            case 1:
-            case 3:
+            case SPRING:
+            case AUTUMN:
                 Car sedan = new Sedan();
-                return sedan;
-            case 2:
+                car = sedan;
+                break;
+            case SUMMER:
                 Car cabrio = new Cabrio();
-                return cabrio;
+                car = cabrio;
+                break;
+            case WINTER:
+                Car suv = new SUV();
+                car = suv;
+                break;
         }
-        Car suv = new SUV();
-        return suv;
+        return car;
+    }
+
+    public boolean isLightsOn() {
+        return lightsOn;
     }
 }
