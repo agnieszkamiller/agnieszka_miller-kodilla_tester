@@ -4,9 +4,10 @@ import java.time.LocalTime;
 
 public interface Car {
 
-    boolean hasHeadlightsTurnedOn(LocalTime localTime);
+    boolean hasHeadlightsTurnedOn();
 
     String getCarType();
 
+    public String toString();
 
 }

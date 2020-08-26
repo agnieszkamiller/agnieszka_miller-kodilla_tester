@@ -3,14 +3,15 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import java.time.LocalTime;
 
 public class Cabrio implements Car {
+    private boolean lightsOn;
+
+    public Cabrio(boolean lightsOn) {
+        this.lightsOn = lightsOn;
+    }
 
     @Override
-    public boolean hasHeadlightsTurnedOn(LocalTime localTime) {
-        if ((localTime.isAfter(LocalTime.of(6, 0)) &&
-                (localTime.isBefore(LocalTime.of(20, 0))))) {
-            return false;
-        }
-        return true;
+    public boolean hasHeadlightsTurnedOn() {
+        return lightsOn;
     }
 
 
@@ -19,5 +20,11 @@ public class Cabrio implements Car {
         return "Cabrio";
     }
 
-
+    @Override
+    public String toString() {
+        if (!hasHeadlightsTurnedOn()) {
+            return getCarType() + ": Lights turned off";
+        }
+        return getCarType() + ": Lights turned on";
+    }
 }
