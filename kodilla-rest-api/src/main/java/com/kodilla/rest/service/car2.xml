@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.kodilla.com"
+           xmlns="http://www.kodilla.com"
+           elementFormDefault="qualified"
+           >
+
+    <xs:element name="car">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="model" type="xs:string"/>
+                <xs:element name="trademark" type="xs:string" default="Ford"/>
+                <xs:element name="colour" type="xs:string" default="black"/>
+                <xs:element name="capacity" type="xs:integer"/>
+                <xs:element name="pH" type="xs:integer"/>
+                <xs:element name="seats">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="colour1" type="xs:string" default="black"/>
+                            <xs:element name="colour2" type="xs:string"/>
+                            <xs:element name="colour3" type="xs:string"/>
+                            <xs:element name="colour4" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="productionYear" type="xs:integer"/>
+                <xs:element name="wheels" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

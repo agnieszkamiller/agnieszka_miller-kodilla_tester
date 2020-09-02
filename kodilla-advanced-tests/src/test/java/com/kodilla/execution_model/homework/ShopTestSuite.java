@@ -27,7 +27,7 @@ class ShopTestSuite {
     }
     @Test
     void shouldReturnOrderListWithGivenDateRange(){
-        assertEquals(0, shop.getOrdersFromDateRange(LocalDate.of(2020,6,1),
+        assertEquals(1, shop.getOrdersFromDateRange(LocalDate.of(2020,6,1),
                 LocalDate.of(2020,6,6)).size());
     }
     @Test

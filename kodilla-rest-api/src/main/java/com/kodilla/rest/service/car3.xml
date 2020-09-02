@@ -1,0 +1,24 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--        Przygotuj treść przykładowego pliku XML,-->
+<!--        opisującego obiekt samochodu.-->
+<!--        Zaproponuj również schemat XSD dla takiego pliku XML.-->
+<!--        jakie atrybuty powinien mieć taki obiek-->
+
+
+<ca:car xmlns:ca="http://www.kodilla.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemalocation="http://www.kodilla.com car.xsd">
+    <ca:model>Focus</ca:model>
+    <ca:trademark>Ford</ca:trademark>
+    <ca:colour>black</ca:colour>
+    <ca:capacity>1800</ca:capacity>
+    <ca:pH>110</ca:pH>
+    <ca:seats>
+        <ca:colour>black</ca:colour>
+        <ca:colour>white</ca:colour>
+        <ca:colour>green</ca:colour>
+        <ca:colour>orange</ca:colour>
+    </ca:seats>
+    <ca:productionYear>2020</ca:productionYear>
+    <ca:wheels>aluminium</ca:wheels>
+</ca:car>
