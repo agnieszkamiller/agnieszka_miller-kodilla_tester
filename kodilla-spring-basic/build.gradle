@@ -18,12 +18,13 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.kodilla'
 version = '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
-test{
-    useJUnitPlatform()
-}
+
 repositories {
     mavenCentral()
 }
+//test{
+//    useJUnitPlatform()
+//}
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter')

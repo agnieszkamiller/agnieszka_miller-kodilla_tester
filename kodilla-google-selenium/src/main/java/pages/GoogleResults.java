@@ -21,9 +21,10 @@ public class GoogleResults extends AbstractPage{
         System.out.println("I see results");
         System.out.println(results.size());
     }
-    public void oneRandomResult(){
+    public WebElement oneRandomResult(){
         Random random = new Random();
         int random1 = random.nextInt(results.size());
-        results.get(random1).click();
+        return results.get(random1);
+
     }
 }
