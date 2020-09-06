@@ -6,20 +6,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ResultRandomPage extends AbstractPage {
+    //oddzielna klasa wraz z metodami reprezentującymi czynności
+    // jakie można wykonywać na stronie
+    // oraz z polami, reprezentującymi WebElement-y elementy HTML strony
 
-    @FindBy(css = "input[title='Szukaj']")
-    static WebElement inputField;
+    @FindBy(css = "div[class='g']")
+    static WebElement webElement;
 
-    private GoogleResults googleResults;
 
     public ResultRandomPage(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(this.driver, this);
     }
 
-    public void result() {
-        PageFactory.initElements(this.driver, ResultRandomPage.class);
-        WebElement webElement = googleResults.oneRandomResult();
+    public WebElement clickInRandomPage(WebElement googleResults) {
+        webElement = googleResults;
         webElement.click();
-
+        return webElement;
     }
+
+
+
+
 }
