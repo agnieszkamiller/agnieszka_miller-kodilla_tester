@@ -11,6 +11,7 @@ import pages.ResultRandomPage;
 import sun.jvm.hotspot.debugger.Page;
 
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 public class TestGoogle {
 
