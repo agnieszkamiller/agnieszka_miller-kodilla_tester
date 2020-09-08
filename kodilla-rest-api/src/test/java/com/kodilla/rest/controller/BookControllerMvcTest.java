@@ -35,6 +35,7 @@ public class BookControllerMvcTest {
     @MockBean
     private BookService bookService;
 
+//    zakomentowane, bo w linii 29  juz jest bookController
 //    @MockBean
  //   private BookController bookController;
 
