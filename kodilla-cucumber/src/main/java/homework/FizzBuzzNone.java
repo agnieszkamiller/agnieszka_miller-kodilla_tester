@@ -4,7 +4,7 @@ public class FizzBuzzNone {
 
 //    public static void main(String[] args) {
 //        FizzBuzzNone fizzBuzzNone = new FizzBuzzNone();
-//        System.out.println(fizzBuzzNone.getNumber(12));
+//        System.out.println(fizzBuzzNone.getNumber(122));
 //    }
 
     public String getNumber(int number) {
