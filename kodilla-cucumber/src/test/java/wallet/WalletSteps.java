@@ -41,10 +41,10 @@ public class WalletSteps implements En {
             cashier.withdraw(wallet, 0);
         });
 
-//        When("I request $ -20", (Integer int1) -> {
-//            Cashier cashier = new Cashier(cashSlot);
-//            cashier.withdraw(wallet, 0);
-//        });
+        When("I request $-{int}", (Integer int1) -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 0);
+        });
 
         Then("$0 should be dispensed", () -> {
             Assert.assertEquals(200,wallet.getBalance());
