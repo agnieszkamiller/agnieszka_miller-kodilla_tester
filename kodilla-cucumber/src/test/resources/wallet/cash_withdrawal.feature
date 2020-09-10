@@ -10,6 +10,5 @@ Feature: Cash Withdrawal
       | 200             | 200             |
       | 300             | 0               |
       | 0               | 0               |
-
  #     | -20               | 0               |
 

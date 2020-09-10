@@ -49,7 +49,5 @@ public class WalletSteps implements En {
         Then("$0 should be dispensed", () -> {
             Assert.assertEquals(200,wallet.getBalance());
         });
-
     }
-
 }
