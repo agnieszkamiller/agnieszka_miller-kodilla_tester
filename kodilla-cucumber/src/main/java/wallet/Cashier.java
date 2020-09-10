@@ -10,4 +10,5 @@ public class Cashier {
     public void withdraw(Wallet wallet, int amount) {
         cashSlot.dispense(amount);
     }
+
 }
