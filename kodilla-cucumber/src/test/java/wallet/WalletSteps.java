@@ -22,9 +22,10 @@ public class WalletSteps implements En {
             Assert.assertEquals(30, cashSlot.getContents());
         });
 
+
         When("I request $200", () -> {
-           Cashier cashier = new Cashier(cashSlot);
-           cashier.withdraw(wallet, 200);
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 200);
         });
 
         Then("$200 should be dispensed", () -> {

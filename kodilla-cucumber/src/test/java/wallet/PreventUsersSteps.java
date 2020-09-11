@@ -7,6 +7,7 @@ public class PreventUsersSteps implements En {
 
     private Wallet wallet = new Wallet();
     private CashSlot cashSlot = new CashSlot();
+    private int balance;
 
     public PreventUsersSteps(){
 
@@ -25,7 +26,29 @@ public class PreventUsersSteps implements En {
         });
 
         Then("I should be told that I don't have enough money in my wallet", () -> {
-            Assert.assertEquals("I should be told that I don't have enough money in my wallet", 170, wallet.getBalance());
+            Assert.assertEquals("I should be told that I don't have enough money in my wallet", 100, wallet.getBalance());
         });
+
+//        When("I check the balance of my wallet", () -> {
+//            wallet.getBalance();
+//        });
+//
+//        Then("I should see that the balance is $100", () -> {
+//            System.out.println("Your balance is: " + wallet.getBalance());
+//        });
+
+        Given("there is $ {int} in my wallet", (Integer int1) -> {
+            wallet.deposit(int1);
+        });
+
+        When("I check the balance of my wallet", () -> {
+            balance = wallet.getBalance();
+        });
+
+        Then("I should see that the balance is $ {int}", (Integer int1) -> {
+            System.out.println("Your balance is: " + balance);
+        });
+
+
     }
 }
