@@ -8,8 +8,8 @@ Feature: Cash Withdrawal
       | requestedamount | dispensedamount |
       | 30              | 30              |
       | 200             | 200             |
-      | 300             | 0               |
+#      | 300             | 0            |
       | 0               | 0               |
-      | -20             | 0               |
-      | -1             | 0               |
+#      | -20             | 0               |
+#      | -1             | 0               |
 
