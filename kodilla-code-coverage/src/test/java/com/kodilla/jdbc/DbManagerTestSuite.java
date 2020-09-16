@@ -2,12 +2,9 @@ package com.kodilla.jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DbManagerTestSuite {
 
@@ -49,37 +46,63 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.println(rs.getInt("ID") + ", " +
                     rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME"));
             counter++;
         }
-        int expected = count + 5;
+        int num = 5;
+        int expected = count + num;
         Assert.assertEquals(expected, counter);
+
+        //close up
+        String delete = "delete from users where id >" + num;
+        statement.execute(delete);
 
         rs.close();
         statement.close();
+
     }
 
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
+        //given
         DbManager dbManager = DbManager.getInstance();
+
+        Statement statement = dbManager.getConnection().createStatement();
+
+        String sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Zara', 'Ali')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Otman', 'Use')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Mark', 'Boq')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Uli', 'Wimer')";
+        statement.executeUpdate(sql);
+        sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Oli', 'Kosiw')";
+        statement.executeUpdate(sql);
+
+        //when
         String query = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_NUMBER\n" +
                 "FROM USERS U\n" +
                 "JOIN POSTS P ON U.ID = P.USER_ID\n" +
                 "GROUP BY P.USER_ID\n" +
                 "HAVING COUNT(*) > 1";
-        Statement statement = dbManager.getConnection().createStatement();
-        ResultSet rs = statement.executeQuery(query);
-        int size = 0;
-        List<String> userData = new ArrayList<>();
-        while (rs.next()){
-            userData.add(rs.getString("FIRSTNAME")+ " " + rs.getString("LASTNAME"));
-        size++;
-        }
-        Assert.assertEquals(size, userData.size());
 
+        ResultSet rs = statement.executeQuery(query);
+        int count = 0;
+        while (rs.next()) {
+            System.out.println(rs.getString("FIRSTNAME") + " " + rs.getString("LASTNAME"));
+            count++;
+        }
+
+        //than
+        Assert.assertEquals(2, count);
+
+        //close up
+        String delete = "delete from users where id >5" ;
+        statement.execute(delete);
         rs.close();
         statement.close();
     }
