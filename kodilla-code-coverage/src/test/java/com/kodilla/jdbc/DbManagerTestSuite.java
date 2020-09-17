@@ -2,6 +2,7 @@ package com.kodilla.jdbc;
 
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -101,7 +102,7 @@ public class DbManagerTestSuite {
         Assert.assertEquals(2, count);
 
         //close up
-        String delete = "delete from users where id >5" ;
+        String delete = "delete from users where id >5";
         statement.execute(delete);
         rs.close();
         statement.close();
