@@ -57,7 +57,7 @@ public class DbManagerTestSuite {
         int expected = count + num;
         Assert.assertEquals(expected, counter);
 
-        //close up
+        //Cleanup
         String delete = "delete from users where id >" + num;
         statement.execute(delete);
 
@@ -68,7 +68,7 @@ public class DbManagerTestSuite {
 
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
-        //given
+        //Given
         DbManager dbManager = DbManager.getInstance();
 
         Statement statement = dbManager.getConnection().createStatement();
@@ -84,7 +84,7 @@ public class DbManagerTestSuite {
         sql = "INSERT INTO USERS(FIRSTNAME, LASTNAME) VALUES ('Oli', 'Kosiw')";
         statement.executeUpdate(sql);
 
-        //when
+        //When
         String query = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_NUMBER\n" +
                 "FROM USERS U\n" +
                 "JOIN POSTS P ON U.ID = P.USER_ID\n" +
@@ -98,13 +98,14 @@ public class DbManagerTestSuite {
             count++;
         }
 
-        //than
+        //Then
         Assert.assertEquals(2, count);
 
-        //close up
+        //Cleanup
         String delete = "delete from users where id >5";
         statement.execute(delete);
         rs.close();
         statement.close();
+
     }
 }
