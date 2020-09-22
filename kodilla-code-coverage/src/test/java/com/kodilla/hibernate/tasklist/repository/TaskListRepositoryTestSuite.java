@@ -21,6 +21,7 @@ public class TaskListRepositoryTestSuite {
     @Test
     public void testFindByListName() {
         List<TaskList> readTasksList = null;
+
         try {
             //Given
             TaskList taskList = new TaskList(listName, description);
@@ -32,7 +33,9 @@ public class TaskListRepositoryTestSuite {
 
             //Then
             Assert.assertEquals(1, readTasksList.size());
+
         } finally {
+
             //CleanUp
             int id = readTasksList.get(0).getId();
             taskListRepository.deleteById(id);
