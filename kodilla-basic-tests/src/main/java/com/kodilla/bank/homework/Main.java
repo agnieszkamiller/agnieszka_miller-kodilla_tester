@@ -2,7 +2,7 @@ package com.kodilla.bank.homework;
 
 public class Main {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         Bank bank = new Bank();
         System.out.println("Salda dla poszczególnych bankomatów:");
@@ -17,5 +17,5 @@ public class Main {
         System.out.println("Srednia kwota wpłat:");
         System.out.println(bank.averageDepositAmount());
 
-    }
+    }*/
 }

@@ -3,19 +3,19 @@ package com.kodilla.abstracts.homework;
 public abstract class Job {
     private double salary;
     private String position;
-    public String[] respList = new String[6];
+    private String[] respList = new String[6];
 
     public Job(double salary, String position) {
         this.salary = salary;
         this.position = position;
-        fillinRespList();
+        fillInRespList();
     }
 
     public double getSalary() {
         return salary;
     }
 
-    public void fillinRespList() {
+    public void fillInRespList() {
         respList[0] = "Pracuje minimum 8 godzin dziennie.";
         respList[1] = "Tworzy raporty miesięczne.";
         respList[2] = "Uczestniczy w spotkaniach zespołu.";
