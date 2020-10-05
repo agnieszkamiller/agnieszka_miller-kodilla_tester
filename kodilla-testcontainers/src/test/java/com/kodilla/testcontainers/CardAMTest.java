@@ -62,6 +62,7 @@ public class CardAMTest {
         FileUtils.copyFile(screenshot, new File("./build/screenshots/" + screenshot.getName()));
 
         String title = driver.findElement(By.id("title")).getText();
-        assertEquals("Agnieszka Miller, tester automatyzujący, tel. 501 000 000", title);
+        assertEquals("Agnieszka Miller, tester automatyzujacy, tel. 501 000 000", title);
+
     }
 }
