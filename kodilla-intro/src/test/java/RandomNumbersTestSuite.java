@@ -33,4 +33,10 @@ public class RandomNumbersTestSuite{
 
         Assertions.assertEquals(5, randomNumbers.minElement(integerList));
     }
+
+    @Test
+    public void shouldMainBeRun() {
+        String[] args = null;
+        RandomNumbers.main(args);
+    }
 }

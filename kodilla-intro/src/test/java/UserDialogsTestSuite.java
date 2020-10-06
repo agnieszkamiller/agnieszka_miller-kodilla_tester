@@ -2,7 +2,9 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 public class UserDialogsTestSuite {
 
@@ -20,6 +22,8 @@ public class UserDialogsTestSuite {
         InputStream in2 = new ByteArrayInputStream(input2.getBytes());
         System.setIn(in2);
         UserDialogs.getUserSelection();
+
+
     }
 
 }

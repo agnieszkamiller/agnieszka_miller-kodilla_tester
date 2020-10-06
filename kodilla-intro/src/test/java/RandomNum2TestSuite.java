@@ -22,4 +22,10 @@ public class RandomNum2TestSuite {
         int max = 1;
         randomNum2.podajMinIMaxValue();
     }
+
+    @Test
+    public void shouldMainBeRun() {
+        String[] args = null;
+        RandomNum2.main(args);
+    }
 }

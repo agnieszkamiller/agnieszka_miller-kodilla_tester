@@ -1,17 +1,25 @@
 package com.kodilla.optional.homework;
 
 import junit.framework.TestCase;
+import org.junit.Test;
 
-public class StudentTestSuite extends TestCase {
+import static org.junit.Assert.assertEquals;
 
+public class StudentTestSuite {
+
+    @Test
     public void testTestGetName() {
         Student student = new Student("Adam", new Teacher("Jolanta"));
-        student.getName();
+
+        assertEquals("Adam", student.getName());
     }
 
+    @Test
     public void testGetTeacher() {
-        Student student = new Student("Adam", new Teacher("Jolanta"));
-        student.getTeacher();
+        Teacher teacher = new Teacher("Jolanta");
+        Student student = new Student("Adam", teacher);
+
+        assertEquals(teacher, student.getTeacher());
 
     }
 }

@@ -11,7 +11,6 @@ public class RandomNumbers {
         List<Integer> integerList = randomNumbers.drawingNumbers();
         System.out.println(randomNumbers.maxElement(integerList));
         System.out.println(randomNumbers.minElement(integerList));
-
     }
 
     public List<Integer> drawingNumbers() {

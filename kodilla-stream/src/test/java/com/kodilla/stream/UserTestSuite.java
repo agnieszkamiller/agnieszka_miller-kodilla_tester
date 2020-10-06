@@ -7,7 +7,7 @@ import org.junit.Test;
 public class UserTestSuite extends TestCase {
 
 
-    User user = new User("Ala", 35, 159, "IT");
+    private final User user = new User("Ala", 35, 159, "IT");
 
     @Test
     public void testGetUsername() {
