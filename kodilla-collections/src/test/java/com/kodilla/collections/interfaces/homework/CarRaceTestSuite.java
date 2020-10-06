@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class CarRaceTestSuite {
 
     @Test
-    void shouldMainBeRun() {
+    public void shouldMainBeRun() {
         String[] args = null;
         CarRace.main(args);
     }
 
     @Test
-    void shouldDoRaceProceed() {
+    public void shouldDoRaceProceed() {
         CarRace carRace = new CarRace();
         Audi audi = new Audi();
         carRace.doRace(audi);

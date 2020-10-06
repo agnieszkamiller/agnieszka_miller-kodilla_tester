@@ -8,14 +8,14 @@ import java.util.Optional;
 public class WarehouseTestSuite {
 
     @Test(expected = OrderDoesntExistException.class)
-    public void test1() throws OrderDoesntExistException{
+    public void shouldGetOrder() throws OrderDoesntExistException{
 //        given
         Warehouse warehouse = new Warehouse();
 //        when
         warehouse.getOrder("1");
 //        then
-
     }
+
     //  poprzednia wersja
     //  uwaga mentora: Jeśli dodajesz @Test(expected = to try/catch nie jest potrzebny
 //    @Test(expected = OrderDoesntExistException.class)
@@ -31,4 +31,14 @@ public class WarehouseTestSuite {
 //        } catch (OrderDoesntExistException e) {
 //            assertEquals(OrderDoesntExistException.class, e.getClass());
 //        }
+
+    @Test
+    public void shouldAddOrder() {
+//        given
+        Warehouse warehouse = new Warehouse();
+        Order order = new Order("1");
+//        when
+//        then
+        warehouse.addOrder(order);
+    }
 }

@@ -10,7 +10,6 @@ public class MainUser {
 //        }
 //        System.out.println(suma);
 
-
 //        tablicaLiczb[0] = 1;
 //
 //        String[] tabStrings = new String[5];
@@ -26,7 +25,6 @@ public class MainUser {
 //        usersArray[1] = new User("Jan", 17);
 //        usersArray[2] = new User("Ada", 40);
 //        usersArray[3] = user3;
-
 
 
         for (int i = 0; i < usersArray.length; i++) {

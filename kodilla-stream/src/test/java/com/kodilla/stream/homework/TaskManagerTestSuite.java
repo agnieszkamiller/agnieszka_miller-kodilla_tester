@@ -27,4 +27,10 @@ public class TaskManagerTestSuite{
         //than
         assertEquals(2,result.size());
     }
+
+    @Test
+    public void shouldMainBeRun() {
+        String[] args = null;
+        TaskManager.main(args);
+    }
 }

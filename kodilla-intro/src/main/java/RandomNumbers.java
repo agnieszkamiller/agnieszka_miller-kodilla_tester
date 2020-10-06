@@ -53,7 +53,7 @@ public class RandomNumbers {
     }
 
 
-    public int metodaJakas() {
+/*    public int metodaJakas() {
         Random random = new Random();
         int sumCzastkowa = 0;
 //        int i = 0;
@@ -67,7 +67,7 @@ public class RandomNumbers {
 
 
         return 0;
-    }
+    }*/
 
 
 
