@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeListApplication {
+
     public static void main(String[] args) {
         List<Square> shapes = new ArrayList<>(); //  utworzyliśmy zmienną shapes typu List<Square>,
         // a także przypisaliśmy do niej nową, pustą kolekcję w postaci obiektu klasy ArrayList

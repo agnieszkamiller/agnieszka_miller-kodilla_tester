@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.interfaces.personal;
 
 //public class Człowiek implements CzynnosciZyciowe, Pasje {
@@ -17,3 +18,4 @@ package com.kodilla.collections.interfaces.personal;
 //
 //    }
 //}
+*/

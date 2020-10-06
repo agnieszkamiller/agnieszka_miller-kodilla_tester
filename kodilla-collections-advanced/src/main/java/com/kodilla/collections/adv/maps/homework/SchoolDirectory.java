@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SchoolDirectory {
+
     public static void main(String[] args) {
         Map<Principal, School> principalSchoolMap = new HashMap<>();
         Principal principal1 = new Principal("Adam", "Kowalski");

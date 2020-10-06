@@ -16,7 +16,6 @@ public class Grades {
         for (double grade : grades)
             sum += grade;
         return sum / grades.size();
-
     }
 
     @Override
