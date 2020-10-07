@@ -1,4 +1,5 @@
 public class Grades {
+
     private int[] grades;
     private int size;
 
@@ -16,7 +17,7 @@ public class Grades {
     }
 
     public int lastValue() {
-        return (this.grades[this.size-1]);
+        return (this.grades[this.size - 1]);
     }
 
     public double averageValue() {

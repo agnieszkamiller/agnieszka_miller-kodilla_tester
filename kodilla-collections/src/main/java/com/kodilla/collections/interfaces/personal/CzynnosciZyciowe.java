@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.interfaces.personal;
 
 public interface CzynnosciZyciowe {
@@ -15,3 +16,4 @@ public interface CzynnosciZyciowe {
     }
 
 }
+*/

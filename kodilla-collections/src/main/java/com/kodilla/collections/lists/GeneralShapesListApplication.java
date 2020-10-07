@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GeneralShapesListApplication {
+
     public static void main(String[] args) {
         List<Shape> shapes = new LinkedList<>();
         Square square = new Square(10);

@@ -3,10 +3,6 @@ package com.kodilla.collections.interfaces.homework;
 public class CarRace {
 
     public static void main(String[] args) {
-
-
-
-
         Ford ford = new Ford();
         Opel opel = new Opel();
         Audi audi = new Audi();

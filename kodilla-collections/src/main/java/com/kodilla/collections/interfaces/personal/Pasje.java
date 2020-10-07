@@ -1,3 +1,4 @@
+/*
 package com.kodilla.collections.interfaces.personal;
 
 public interface Pasje extends CzynnosciZyciowe {
@@ -7,3 +8,4 @@ public interface Pasje extends CzynnosciZyciowe {
     void programowanie();
 
 }
+*/

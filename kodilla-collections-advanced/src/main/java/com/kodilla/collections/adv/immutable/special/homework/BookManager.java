@@ -13,6 +13,10 @@ public class BookManager {
         return book;
     }
 
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
     public void addToList(Book book1) {
 //        boolean result = bookList.contains(book);
 //        if (result)
@@ -26,6 +30,8 @@ public class BookManager {
         } else {
             System.out.println("Książka już istnieje.");
         }
+
+
     }
 
 

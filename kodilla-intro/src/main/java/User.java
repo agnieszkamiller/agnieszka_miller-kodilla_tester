@@ -16,7 +16,7 @@ public class User {
         return "Name: " + name + ", age: " + age;
     }
 
-    // geter
+    // gettery
     public String getName() {
         return name;
     }

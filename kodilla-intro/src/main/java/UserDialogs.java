@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class UserDialogs {
-    public static String  getUsername() {
+    public static String getUsername() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Enter your name:");
@@ -12,21 +12,27 @@ public class UserDialogs {
             System.out.println("Name is too short. Try again.");
         }
     }
-    public static String  getUserSelection() {
+
+    public static String getUserSelection() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Select calculation (A-add, s-subtract, d-divide, M-multiply):");
             String calc = scanner.nextLine().trim().toUpperCase();
             switch (calc) {
-                case "A": return "ADD";
-                case "S": return "SUB";
-                case "D": return "DIV";
-                case "M": return "MUL";
+                case "A":
+                    return "ADD";
+                case "S":
+                    return "SUB";
+                case "D":
+                    return "DIV";
+                case "M":
+                    return "MUL";
                 default:
                     System.out.println("Wrong calculation. Try again.");
             }
         }
     }
+
     public static int getValue() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number:");

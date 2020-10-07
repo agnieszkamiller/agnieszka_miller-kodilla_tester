@@ -11,7 +11,6 @@ public class RandomNumbers {
         List<Integer> integerList = randomNumbers.drawingNumbers();
         System.out.println(randomNumbers.maxElement(integerList));
         System.out.println(randomNumbers.minElement(integerList));
-
     }
 
     public List<Integer> drawingNumbers() {
@@ -53,7 +52,7 @@ public class RandomNumbers {
     }
 
 
-    public int metodaJakas() {
+/*    public int metodaJakas() {
         Random random = new Random();
         int sumCzastkowa = 0;
 //        int i = 0;
@@ -67,7 +66,7 @@ public class RandomNumbers {
 
 
         return 0;
-    }
+    }*/
 
 
 
