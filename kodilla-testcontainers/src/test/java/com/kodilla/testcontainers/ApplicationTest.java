@@ -39,13 +39,13 @@ public class ApplicationTest {
                     .withNetwork(network)
                     .withNetworkAliases("my-server")
                     .withExposedPorts(80);
-
     @Rule
     public BrowserWebDriverContainer chrome =
             new BrowserWebDriverContainer<>()
                     .withNetwork(network)
                     .withRecordingMode(SKIP, null)
                     .withCapabilities(new ChromeOptions());
+
 
     @Rule
     public BrowserWebDriverContainer firefox =
